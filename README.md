@@ -1,0 +1,1 @@
+Utility stuff for using the [metrics](https://github.com/codahale/metrics) library with [Jersey](http://jersey.java.net/).
