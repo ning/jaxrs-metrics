@@ -4,7 +4,7 @@
   <groupId>com.ning.jaxrs</groupId>
   <artifactId>jaxrs-metrics</artifactId>
   <name>jaxrs-metrics</name>
-  <version>1.0.0</version>
+  <version>1.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
   <description>Utility stuff for using the metrics library with JAX-RS</description>
   <url>http://www.ning.com</url>
