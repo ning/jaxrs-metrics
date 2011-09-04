@@ -1,7 +1,7 @@
 package com.ning.jersey.metrics;
 
 import java.lang.reflect.Method;
-import com.google.common.util.concurrent.ValueFuture;
+import com.google.common.util.concurrent.SettableFuture;
 import com.google.inject.Inject;
 import com.google.inject.TypeLiteral;
 import com.google.inject.matcher.Matchers;
@@ -13,7 +13,7 @@ import com.yammer.metrics.core.MetricsRegistry;
  * A listener which adds method interceptors to timed resource methods.
  */
 public class TimedResourceListener implements TypeListener {
-    private ValueFuture<MetricsRegistry> metricsRegistryFuture = ValueFuture.create();
+    private SettableFuture<MetricsRegistry> metricsRegistryFuture = SettableFuture.create();
 
     @Inject
     public void setMetricsRegistry(MetricsRegistry metricsRegistry) {
