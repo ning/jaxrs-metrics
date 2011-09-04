@@ -10,12 +10,12 @@ import java.util.concurrent.TimeUnit;
  * An annotation for marking a JAX-RS resource method of a Guice-provided object as timed.
  * <p/>
  * Given a method like this:
- * <pre><code>
- *     @TimedResource(name = "fancyName", rateUnit = TimeUnit.SECONDS, durationUnit = TimeUnit.MICROSECONDS)
- *     public String getStuff() {
+ * <code><pre>
+ *     &#64;TimedResource(name = "fancyName", rateUnit = TimeUnit.SECONDS, durationUnit = TimeUnit.MICROSECONDS)
+ *     public String getStuff() &#123;
  *         return "Sir Captain " + name;
- *     }
- * </code></pre>
+ *     &#125;
+ * </pre></code>
  * <p/>
  * One timer for each response code for the defining class with the name {@code getStuff-[responseCode]}
  * will be created and each time the {@code #getStuff()} method is invoked, the
