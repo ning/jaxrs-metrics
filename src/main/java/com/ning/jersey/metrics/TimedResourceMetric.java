@@ -8,13 +8,14 @@ import java.util.concurrent.TimeoutException;
 import com.google.common.base.Function;
 import com.google.common.collect.MapMaker;
 import com.yammer.metrics.core.MetricsRegistry;
-import com.yammer.metrics.core.TimerMetric;
+import com.yammer.metrics.core.Timer;
 
 public class TimedResourceMetric 
 {
     private final int defaultStatusCode;
-    private final Map<Integer, TimerMetric> metrics;
+    private final Map<Integer, Timer> metrics;
 
+    @SuppressWarnings("deprecation")
     public TimedResourceMetric(final Future<MetricsRegistry> metricsRegistryFuture,
                                final Class<?> klass,
                                final String name,
@@ -23,9 +24,9 @@ public class TimedResourceMetric
                                final TimeUnit rateUnit)
     {
         this.defaultStatusCode = defaultStatusCode;
-        this.metrics = new MapMaker().makeComputingMap(new Function<Integer, TimerMetric>() {
+        this.metrics = new MapMaker().makeComputingMap(new Function<Integer, Timer>() {
             @Override
-            public TimerMetric apply(Integer input)
+            public Timer apply(Integer input)
             {
                 try
                 {
